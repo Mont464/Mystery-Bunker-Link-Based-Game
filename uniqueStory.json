@@ -1,0 +1,199 @@
+{
+    "Title": "Mystery Bunker",
+    "Credits": "Created by Alejandro Montoreano (amontore@ucsc.edu).",
+    "InitialLocation": "Start Room",
+    "Locations": {
+        "Start Room": {
+            "Body": "It is impossible to see, you stand and stretch out your arms but are unable to reach the walls.",
+            "Choices": [
+                {
+                    "Text": "Left",
+                    "Target": "Globe Room"
+                },
+                {
+                    "Text": "Right",
+                    "Target": "Resident Report Room"
+                },
+                {
+                    "Text": "Vines?",
+                    "Target": "Climb Vines",
+                    "Requires": "Gel Tree"
+                }
+            ]
+        },
+        "Globe Room": {
+            "Body": "Strange empty room to traverse, the floor dips and any noise is met with a light echo.",
+            "Choices": [
+                {
+                    "Text": "Right",
+                    "Target": "Start Room"
+                },
+                {
+                    "Text": "Down",
+                    "Target": "Wall Writing Room"
+                },
+                {
+                    "Text": "Look Through Orb",
+                    "Target": "See Globe Orb",
+                    "Requires": "Orb"
+                }
+            ]
+        },
+        "See Globe Orb": {
+            "Body": "Looking through the Gelatin Orb reveals the walls of the spherical room are glowing blue and green representing Earth, though there is something wrong. Some sections of Asia, North America, Europe and Antarctica are missing, and there are similarly sized red circles on parts of Africa and Austrailia. There was also a red mark on South America, but as you watched, the mark began to blink, and soon went black like the rest of the missing sections.",
+            "Choices": [
+                {
+                    "Text": "Stop Looking",
+                    "Target": "Globe Room"
+                }
+            ]
+        },
+        "Resident Report Room": {
+            "Body": "Slightly smaller room with a dimly lit table covered in papers.",
+            "Choices": [
+                {
+                    "Text": "Left",
+                    "Target": "Start Room"
+                },
+                {
+                    "Text": "Up",
+                    "Target": "Terrarium Room"
+                },
+                {
+                    "Text": "Read Papers",
+                    "Target": "Report Papers"
+                }
+            ]
+        },
+        "Report Papers": {
+            "Body": "Resident Name: El~~~ ~nak~, Role: Astrobiologist, Goal: Determine ~~~~~ suitability, Status: Alive ... The paper has been ripped in some places making it impossible to decypher some of the letters.",
+            "Choices": [
+                {
+                    "Text": "Stop Reading",
+                    "Target": "Resident Report Room"
+                }
+            ]
+        },
+        "Wall Writing Room": {
+            "Body": "Compact hallway, you can reach both walls while standing in the middle. Walking forward you see large poorly written words that read: 'THIS IS NOT YOUR PLACE'",
+            "Choices": [
+                {
+                    "Text": "Up",
+                    "Target": "Globe Room"
+                },
+                {
+                    "Text": "Right",
+                    "Target": "Control Room"
+                }
+            ]
+        },
+        "Terrarium Room": {
+            "Body": "Multiple Glass cases with rotting material can be seen across the walls, and a strange substance trail can be seen that leads left.",
+            "Choices": [
+                {
+                    "Text": "Down",
+                    "Target": "Resident Report Room"
+                },
+                {
+                    "Text": "Left",
+                    "Target": "Gelatin Orb Room"
+                }
+            ]
+        },
+        "Control Room": {
+            "Body": "Multiple broken monitors can be seen and there is a lever on the wall.",
+            "Choices": [
+                {
+                    "Text": "Left",
+                    "Target": "Wall Writing Room"
+                },
+                {
+                    "Text": "Pull Lever",
+                    "Target": "Lever Pull",
+                    "RequiresNot": "LeverPulled"
+                },
+                {
+                    "Text": "Secret Vent",
+                    "Target": "TREE",
+                    "Requires": "LeverPulled"
+                }
+            ]
+        },
+        "Lever Pull": {
+            "Body": "You grab the lever and pull. The room shakes slightly and you see on your right that a small vent-like hole slide open ",
+            "Choices": [
+                {
+                    "Text": "Back",
+                    "Target": "Control Room",
+                    "addItem": "LeverPulled"
+                }
+            ]
+        },
+        "TREE": {
+            "Body": "Reaching the end of the vent, you enter a Medium sized room with channels of liquid leading to the center where a tree like structure stands. There is a small circular slot in the center of the tree.",
+            "Choices": [
+                {
+                    "Text": "Leave",
+                    "Target": "Control Room"
+                },
+                {
+                    "Text": "Place Orb",
+                    "Target": "Tree Orb",
+                    "Requires": "Orb",
+                    "RequiresNot": "OrbPlaced",
+                    "addItem": "OrbPlaced"
+                }
+            ]
+        },
+        "Tree Orb": {
+            "Body": "You place the Gelatin Orb inside of the tree, and it begins to glow. The floor begins to violently shake and the tree begins growing rapidly, covering the walls and the cieling before suddenly stopping. You pick up the now glowing orb, seeing that the liquid inside has become a small flame.",
+            "Choices": [
+                {
+                    "Text": "Back",
+                    "Target": "TREE",
+                    "addItem": "Gel Tree"
+                }
+            ]
+        },
+        "Gelatin Orb Room": {
+            "Body": "Compact room that is covered in an unidentifiable substance. A small translucent orb can be seen atop a pedestal.",
+            "Choices": [
+                {
+                    "Text": "Right",
+                    "Target": "Terrarium Room"
+                },
+                {
+                    "Text": "Pick up Orb",
+                    "Target": "Aquire Orb",
+                    "RequiresNot": "Orb"
+                }
+            ]
+        },
+        "Aquire Orb": {
+            "Body": "The Gelatin Orb is cold to the touch and hard to hold on to. You see a liquid swirling in the center",
+            "Choices": [
+                {
+                    "Text": "Back",
+                    "Target": "Gelatin Orb Room",
+                    "addItem": "Orb"
+                }
+            ]
+        },
+        "Climb Vines": {
+            "Body": "You notice vines hanging from the cieling just above where you initially woke up. You climb the vines and see a door at the end of the hall.",
+            "Choices": [
+                {
+                    "Text": "Back",
+                    "Target": "Start Room"
+                },
+                {
+                    "Text": "Open Door",
+                    "Target": "Exit"
+                }
+            ]
+        },
+        "Exit": {
+            "Body": "As you open the door you are immediately suffocated by the toxic wind. Before fainting, you notice the vast turquoise ocean surrounding the bunker you had just exited. The last thing you are able to see is the text inscribed on the wall of the bunker which reads: 'Saturn Lunar Colony: Titan A'"
+        }
+    }
+}
